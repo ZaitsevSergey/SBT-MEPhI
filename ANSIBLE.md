@@ -1,4 +1,4 @@
-## Задание по ansible 
+﻿## Задание по ansible 
 
 ### 1. Склонировать репозиторий
 Необходимо склонировать текущий репозиторий локально (ветку `master`)
@@ -107,7 +107,7 @@ https://ru.wikipedia.org/wiki/YAML
 
 Дозаполните файл для slave2
 
-Запустите `ansible -i inventory.yaml -m 'ping'` 
+Запустите `ansible all -i inventory.yaml -m 'ping'` 
 
 Ожидаемый вывод (для случая корректно заполненного inventory):
 ```
@@ -225,7 +225,7 @@ ansible-playbook install_nginx.yaml -i inventory.yaml
 После успешной отработки скрипта зайдите на адреса:
 http://localhost:8091/
 и 
-http://localhost:8091/
+http://localhost:8092/
 
 На эти порты настроен форвардинг со slave1 и slave2 соответственно.
 Вы должны обнаружить страничку "по умолчанию" nginx
@@ -242,7 +242,7 @@ https://docs.ansible.com/ansible/latest/modules/template_module.html
 ansible-playbook create_file_from_template.yaml -i inventory.yaml
 ```
 Смотрим на странички
-http://localhost:8091/
+http://localhost:8091/ и http://localhost:8092/
 
 Хммм. получилось не вполне то, что нужно. Причина - в неверной конфигурации сервера.
 Поправим ее.
@@ -303,6 +303,6 @@ host_key_checking = False
 Затем нужно открыть в браузере
 http://localhost:8091/
 и 
-http://localhost:8091/
+http://localhost:8092/
 
 И позвать организатора для сдачи результатов.
